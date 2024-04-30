@@ -26,7 +26,7 @@ var (
 func init(){
 	ctx = context.TODO()
 
-	mongoconn := options.Client().ApplyURI("mongodb+srv://rafiqsyed959:Ew6Rmls3LTSaGFri@cluster0.up2e714.mongodb.net/")
+	mongoconn := options.Client().ApplyURI("mongodb+srv://username:password@cluster0.up2e714.mongodb.net/")
 	mongoclient, err = mongo.Connect(ctx,mongoconn)
 	if err != nil{
 		log.Fatal(err)
