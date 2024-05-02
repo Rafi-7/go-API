@@ -12,7 +12,7 @@ type UserServiceImpl struct {
 	ctx            context.Context
 }
 
-func NewUserService(usercollection *mongo.Collection, ctx context.Context) UserService()  {
+func NewUserService(usercollection *mongo.Collection, ctx context.Context) UserService {
 	return &UserServiceImpl{
 		usercollection: usercollection,
 		ctx: ctx,
@@ -49,7 +49,7 @@ func (u *UserServiceImpl) GetAll() ([]*models.User,error) {
 	}
 
 	if err := cursor.Err(); err!= nil{
-		return nill, err
+		return nil, err
 	}
 
 	cursor.Close(u.ctx)
